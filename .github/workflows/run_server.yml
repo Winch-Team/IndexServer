@@ -10,7 +10,7 @@ jobs:
         with:
           rust-version: stable
       - name: Install Dufs
-        uses: taiki-e/cache-cargo-install-action@v1.3
+        uses: taiki-e/cache-cargo-install-action@v1.3.0
         with:
           tool: dufs
       - name: Checkout
