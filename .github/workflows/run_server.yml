@@ -11,9 +11,7 @@ jobs:
           rust-version: stable
       - name: Install Dufs
         run: |
-          cargo install dufs
-          echo "::add-path::${HOME}/.cargo/bin"
-          
+          cargo install dufs          
   deploy:
     name: Deploys server to ngrok
     runs-on: ubuntu-latest
