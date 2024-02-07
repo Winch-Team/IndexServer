@@ -6,9 +6,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install Rust and Cargo
-        uses: actions/setup-rust@v1
+        uses: ATiltedTree/setup-rust@v1
         with:
-          toolchain: stable
+          rust-version: stable
       - name: Install Dufs
         run: |
           cargo install dufs
