@@ -1,27 +1,23 @@
 name: CI
-on: push
-
+'on': push
 jobs:
-
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Dufs
+      - run: rustup update stable && rustup default stable
+      - run: cargo install dufs
   deploy:
     name: Deploys server to ngrok
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-	
-    - name: Install dufs
-      run: |
-        rustup update stable && rustup default stable
-        cargo install dufs
-    
-    - name: Run container
-      run: dufs -p 3000
-    
-    - uses: luisboto/ngrok-tunnel-action@v0.1.7.2
-      with:
-        timeout: 1h
-        port: 3000
-        ngrok_authtoken: ${{ secrets.NGROK_AUTHTOKEN }}
-        tunnel_type: http
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Run container
+        run: dufs -p 3000
+      - uses: luisboto/ngrok-tunnel-action@v0.1.7.2
+        with:
+          timeout: 1h
+          port: 3000
+          ngrok_authtoken: '${{ secrets.NGROK_AUTHTOKEN }}'
+          tunnel_type: http
