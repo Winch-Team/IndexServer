@@ -10,8 +10,9 @@ jobs:
         with:
           rust-version: stable
       - name: Install Dufs
-        run: |
-          cargo install dufs          
+        uses: taiki-e/cache-cargo-install-action@v1.3
+        with:
+          tool: dufs
       - name: Checkout
         uses: actions/checkout@v2
       - name: Run container
