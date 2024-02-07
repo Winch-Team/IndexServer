@@ -5,10 +5,14 @@ jobs:
   install:
     runs-on: ubuntu-latest
     steps:
+      - name: Install Rust and Cargo
+        uses: actions/setup-rust@v1
+        with:
+          toolchain: stable
       - name: Install Dufs
         run: |
-          sudo apt-get update
-          sudo apt-get install -y duf
+          cargo install dufs
+          echo "::add-path::${HOME}/.cargo/bin"
           
   deploy:
     name: Deploys server to ngrok
