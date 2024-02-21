@@ -21,7 +21,6 @@ function load_readme(version, scroll_to_div=false){
     contentDivs.forEach(div => div.classList.remove('selected'));
 
     document.getElementById(version).classList.add('selected');
-    document.getElementById('markdown-container').innerHTML = marked.parse(markupContent);
     if (scroll_to_div) {
       // document.getElementById('description_pkg').scrollIntoView();
       history.replaceState(null, null, '#'+version);
@@ -67,3 +66,17 @@ function removeHrefFromAnchors() {
 window.onload = function() {
   removeHrefFromAnchors();
 };
+
+document.getElementById("downloadbtn").addEventListener('click', function() {
+  cur_version = document.getElementsByClassName('selected')[0].id
+  homepage = document.getElementById('repoHomepage').className
+
+  console.log(homepage, cur_version)
+
+  owner = homepage.split('/')[3]
+  repo = homepage.split('/')[4]
+
+  console.log(owner, repo)
+
+  openLinkInNewTab(`https://api.github.com/repos/${owner}/${repo}/releases/tags/${cur_version}`);
+});
