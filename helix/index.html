@@ -1,99 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+ <head>
   <!-- Required meta tags -->
-  <meta charset="utf-8" />
-  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
-
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
   <!-- Skeleton CSS -->
-  <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
-    rel="stylesheet" />
-
+  <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" rel="stylesheet"/>
   <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&amp;display=swap" rel="stylesheet"
-    type="text/css" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&amp;display=swap" rel="stylesheet" type="text/css"/>
   <!-- JQuery -->
-  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-
+  <script src="https://code.jquery.com/jquery-latest.min.js">
+  </script>
   <!-- Marked parser -->
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js">
+  </script>
   <!-- Favicon -->
-  <link
-    href="https://gist.githubusercontent.com/astariul/c09af596e802e945d3032774e10e1047/raw/f693a2e2b65966494da082887bc4be2917f615e4/random_icon.svg"
-    rel="icon" />
-
+  <link href="https://gist.githubusercontent.com/astariul/c09af596e802e945d3032774e10e1047/raw/f693a2e2b65966494da082887bc4be2917f615e4/random_icon.svg" rel="icon"/>
   <!-- Custom Styles -->
-  <link href="../static/package_styles.css" rel="stylesheet" />
-
+  <link href="../static/package_styles.css" rel="stylesheet"/>
   <!-- Our JS -->
-  <script type="text/javascript" src="../static/pypi_checker.js"></script>
-  <script src="../static/package_page.js" defer></script>
-
+  <script src="../static/pypi_checker.js" type="text/javascript">
+  </script>
+  <script defer="" src="../static/package_page.js">
+  </script>
   <title>
-    Winch - Simple Index
+   Winch - Simple Index
   </title>
-</head>
-
-<body>
+ </head>
+ <body>
   <div class="container">
-    <section class="header">
-      <a href="https://index.winchteam.dev">
-        <img src="../back.svg" width="16" height="32" />
-      </a>
-      helix
-      <span>
-      </span>
-      <span id='latest-version' class="version">
-        W1
-      </span>
-      <span id='latest-main-version' hidden>
-        W1
-      </span>
-    </section>
-
-    <pre id='installdanger' hidden>
-      <button class="danger-button" disabled>
+   <section class="header">
+    <a href="https://index.winchteam.dev">
+     <img height="32" src="../back.svg" width="16"/>
+    </a>
+    helix
+    <span>
+    </span>
+    <span class="version" id="latest-version">
+     w4
+    </span>
+    <span hidden="" id="latest-main-version">
+     w4
+    </span>
+   </section>
+   <pre hidden="" id="installdanger">
+      <button class="danger-button" disabled="">
         DANGER ! A higher version of <i>helix</i> already exists on WPI
       </button>
     </pre>
-
-    <pre id='installcmd'>
+   <pre id="installcmd">
       <code>winch install helix</code>
     </pre>
-
-    <hr />
-
-    <div class="row">
-      <div class="three columns">
-        <b>
-          Project links
-        </b>
-        <button id="repoHomepage" onclick="openLinkInNewTab('https://github.com/Winch-Team/helix')">
-          Repository
-        </button>
-        <button id="downloadbtn">Download</button>
-        <p class="elem">
-          <b>
-            Author :
-          </b>
-          Winch-Team
-        </p>
-        <section class="versions" id="versions">
-          <div id="W1" onclick="load_readme('W1', scroll_to_div=true)">
-            <a href="git+https://github.com/Winch-Team/helix@W1#egg=helix-w1">
-              w1
-            </a>
-          </div>
-        </section>
+   <hr/>
+   <div class="row">
+    <div class="three columns">
+     <b>
+      Project links
+     </b>
+     <button id="repoHomepage" onclick="openLinkInNewTab('https://github.com/Winch-Team/helix')">
+      Repository
+     </button>
+     <button id="downloadbtn">
+      Download
+     </button>
+     <p class="elem">
+      <b>
+       Author :
+      </b>
+      Winch-Team
+     </p>
+     <section class="versions" id="versions">
+      <div id="W1" onclick="load_readme('W1', scroll_to_div=true)">
+       <a href="git+https://github.com/Winch-Team/helix@W1#egg=helix-w1">
+        w1
+       </a>
       </div>
+      <div class="" id="w4" onclick="load_readme('w4', scroll_to_div=true);">
+       <a href="git+b('https://github.com/Winch-Team/helix'@w4#egg=helix-w4">
+        w4
+       </a>
+      </div>
+     </section>
     </div>
+   </div>
   </div>
-
   <script>
-    var url_readme_main = 'https://raw.githubusercontent.com/Winch-Team/helix/main/README.md';
+   var url_readme_main = 'https://raw.githubusercontent.com/Winch-Team/helix/main/README.md';
 
     $(document).ready(function () {
       var this_vers = document.getElementById('latest-main-version').textContent.trim();
@@ -109,6 +101,5 @@
       load_readme(this_vers);
     });
   </script>
-</body>
-
+ </body>
 </html>
